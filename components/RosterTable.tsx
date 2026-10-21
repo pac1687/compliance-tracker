@@ -35,6 +35,12 @@ const DEPARTMENTS = [
   'People Ops',
 ];
 
+const STATUS_URGENCY: Record<ComplianceStatus, number> = {
+  EXPIRED: 1,
+  EXPIRING_SOON: 2,
+  COMPLIANT: 3,
+};
+
 export default function RosterTable({
   initialRecords,
   activeStatusFilter,
@@ -47,13 +53,6 @@ export default function RosterTable({
   const [activeActionId, setActiveActionId] = useState<string | null>(null);
 
   const [isPending, startTransition] = useTransition();
-
-  // Status weight for urgency sorting
-  const statusUrgency: Record<ComplianceStatus, number> = {
-    EXPIRED: 1,
-    EXPIRING_SOON: 2,
-    COMPLIANT: 3,
-  };
 
   // Filter and sort records
   const filteredRecords = useMemo(() => {
@@ -85,7 +84,7 @@ export default function RosterTable({
       })
       .sort((a, b) => {
         // Sort by urgency: EXPIRED -> EXPIRING_SOON -> COMPLIANT
-        const urgencyDiff = statusUrgency[a.status] - statusUrgency[b.status];
+        const urgencyDiff = STATUS_URGENCY[a.status] - STATUS_URGENCY[b.status];
         if (urgencyDiff !== 0) return urgencyDiff;
         // Secondary sort by expiration date ascending
         return (

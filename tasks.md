@@ -179,7 +179,7 @@ This blueprint breaks down the end-to-end development and deployment of the **Co
 **Goal:** Push repository to GitHub, trigger Vercel build, inject environment variables, and verify a zero-error deployment.
 
 ### Tasks
-- [ ] **4.1 Production Build Test Locally**
+- [x] **4.1 Production Build Test Locally**
   - Run:
     ```bash
     npm run build
