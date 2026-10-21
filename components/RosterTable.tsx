@@ -15,6 +15,7 @@ import {
   Clock,
   AlertTriangle,
   FolderOpen,
+  ChevronDown,
 } from 'lucide-react';
 
 interface RosterTableProps {
@@ -224,7 +225,7 @@ export default function RosterTable({
             <select
               value={selectedDept}
               onChange={(e) => setSelectedDept(e.target.value)}
-              className="w-full rounded-lg border border-slate-300 py-1.5 pl-8 pr-3 text-xs text-slate-900 focus:border-indigo-600 focus:outline-hidden focus:ring-1 focus:ring-indigo-600 bg-white"
+              className="w-full appearance-none rounded-lg border border-slate-300 py-1.5 pl-8 pr-8 text-xs text-slate-900 focus:border-indigo-600 focus:outline-hidden focus:ring-1 focus:ring-indigo-600 bg-white cursor-pointer"
             >
               {DEPARTMENTS.map((dept) => (
                 <option key={dept} value={dept}>
@@ -232,6 +233,9 @@ export default function RosterTable({
                 </option>
               ))}
             </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2.5 text-slate-400">
+              <ChevronDown className="h-3.5 w-3.5" />
+            </div>
           </div>
         </div>
       </div>

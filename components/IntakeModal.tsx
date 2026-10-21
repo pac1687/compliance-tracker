@@ -3,7 +3,7 @@
 import React, { useState, useTransition, useEffect } from 'react';
 import { createComplianceRecord } from '@/app/actions';
 import { CreateRecordInput } from '@/types/compliance';
-import { X, Loader2, PlusCircle, Calendar, Mail, User, BookOpen, Building } from 'lucide-react';
+import { X, Loader2, PlusCircle, Calendar, Mail, User, BookOpen, Building, ChevronDown } from 'lucide-react';
 
 interface IntakeModalProps {
   isOpen: boolean;
@@ -213,7 +213,7 @@ export default function IntakeModal({
                   name="department"
                   value={formData.department}
                   onChange={handleChange}
-                  className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm text-slate-900 focus:border-indigo-600 focus:outline-hidden focus:ring-1 focus:ring-indigo-600 bg-white"
+                  className="w-full appearance-none rounded-lg border border-slate-300 py-2 pl-9 pr-9 text-sm text-slate-900 focus:border-indigo-600 focus:outline-hidden focus:ring-1 focus:ring-indigo-600 bg-white cursor-pointer"
                 >
                   {DEPARTMENTS.map((dept) => (
                     <option key={dept} value={dept}>
@@ -221,6 +221,9 @@ export default function IntakeModal({
                     </option>
                   ))}
                 </select>
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400">
+                  <ChevronDown className="h-4 w-4" />
+                </div>
               </div>
             </div>
 
