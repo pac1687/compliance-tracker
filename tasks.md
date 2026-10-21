@@ -9,7 +9,7 @@ This blueprint breaks down the end-to-end development and deployment of the **Co
 **Goal:** Establish a runnable Next.js 14+ project with Tailwind CSS, provision the PostgreSQL schema, and verify live database connectivity.
 
 ### Tasks
-- [ ] **1.1 Scaffold Next.js Application**
+- [x] **1.1 Scaffold Next.js Application**
   - Run terminal command:
     ```bash
     npx create-next-app@latest compliance-tracker --typescript --tailwind --eslint --app --src-dir=false --import-alias="@/*" --use-npm
@@ -19,11 +19,11 @@ This blueprint breaks down the end-to-end development and deployment of the **Co
     ```bash
     npm install postgres lucide-react
     ```
-- [ ] **1.2 Provision Database & Execute Schema**
+- [x] **1.2 Provision Database & Execute Schema**
   - Open Neon (neon.tech) or Supabase (supabase.com) SQL Editor.
   - Run the schema and seed scripts from `spec.md` (creating `compliance_records` table, indexes, and initial 7 rows).
   - Copy the pooled connection string (`postgres://...sslmode=require`).
-- [ ] **1.3 Configure Environment & Database Client**
+- [x] **1.3 Configure Environment & Database Client**
   - Create `.env.local`:
     ```env
     DATABASE_URL="postgres://user:password@ep-xyz-pooler.region.neon.tech/neondb?sslmode=require"
@@ -48,7 +48,7 @@ This blueprint breaks down the end-to-end development and deployment of the **Co
 
     export default sql;
     ```
-- [ ] **1.4 Verify Local Connectivity**
+- [x] **1.4 Verify Local Connectivity**
   - Create a quick verification test or start `npm run dev` to ensure no dependency errors.
 
 > ⚠️ **Pitfalls to Avoid:**
