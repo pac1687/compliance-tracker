@@ -188,7 +188,7 @@ This blueprint breaks down the end-to-end development and deployment of the **Co
     - Route `/` rendered as Dynamic (`λ`).
     - Zero TypeScript compilation errors.
     - Zero ESLint blocking warnings.
-- [ ] **4.2 Git Initialization & GitHub Push**
+- [x] **4.2 Git Initialization & GitHub Push**
   - Initialize and push:
     ```bash
     git init
@@ -197,7 +197,7 @@ This blueprint breaks down the end-to-end development and deployment of the **Co
     gh repo create compliance-tracker --public --source=. --push
     # (Or manually link remote: git remote add origin <URL> && git push -u origin main)
     ```
-- [ ] **4.3 Vercel Deployment & Environment Variable Injection**
+- [x] **4.3 Vercel Deployment & Environment Variable Injection**
   - Option A (Vercel CLI):
     ```bash
     npx vercel --prod --env DATABASE_URL="<YOUR_POSTGRES_URL>"
