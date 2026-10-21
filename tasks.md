@@ -219,9 +219,9 @@ This blueprint breaks down the end-to-end development and deployment of the **Co
 **Goal:** Validate all live user paths on the production URL and verify key interactive workflows.
 
 ### Tasks
-- [ ] **5.1 End-to-End Smoke Test on Production URL**
-  - [ ] **Metric Cards Check:** Confirm total count matches number of rows and percentages are accurate.
-  - [ ] **Intake Form:** Add a new record (e.g. "Ada Lovelace", "ada@cyberdyne.io", "Engineering", "HIPAA Security", today, +1 year). Verify table updates instantly.
-  - [ ] **One-Click Renewal:** Find an expired or expiring record, click "Mark Renewed". Verify badge changes to emerald `COMPLIANT` and stats re-calculate.
-  - [ ] **Search & Filters:** Search for "Ada", filter by department "Engineering", click "Expiring Soon" tab. Confirm instant reactivity.
-  - [ ] **Delete Action:** Delete a test record and verify clean removal.
+- [x] **5.1 End-to-End Smoke Test on Production URL**
+  - [x] **Metric Cards Check:** Confirm total count matches number of rows and percentages are accurate.
+  - [x] **Intake Form:** Add a new record (e.g. "Ada Lovelace", "ada@cyberdyne.io", "Engineering", "HIPAA Security", today, +1 year). Verify table updates instantly.
+  - [x] **One-Click Renewal:** Find an expired or expiring record, click "Mark Renewed". Verify badge changes to emerald `COMPLIANT` and stats re-calculate.
+  - [x] **Search & Filters:** Search for "Ada", filter by department "Engineering", click "Expiring Soon" tab. Confirm instant reactivity.
+  - [x] **Delete Action:** Delete a test record and verify clean removal.
