@@ -138,18 +138,18 @@ This blueprint breaks down the end-to-end development and deployment of the **Co
 **Goal:** Assemble the responsive executive dashboard: metric cards, search/filter controls, interactive intake modal, and the roster table with one-click actions.
 
 ### Tasks
-- [ ] **3.1 Executive Metric Summary Cards**
+- [x] **3.1 Executive Metric Summary Cards**
   - Create `components/MetricCards.tsx`:
     - Total Tracked Records.
     - Compliant Count + Compliance Rate %.
     - Expiring Soon Count (styled in warning amber).
     - Overdue / Non-Compliant Count (styled in urgent rose).
-- [ ] **3.2 Record Intake Modal / Form**
+- [x] **3.2 Record Intake Modal / Form**
   - Create `components/IntakeModal.tsx` (`'use client'`):
     - Input fields: Full Name, Email, Department (select dropdown), Course Title, Completion Date (default `today`), Expiration Date (default `+1 year`).
     - Client-side submit handler with `useTransition` for instant loading spinner feedback.
     - Auto-close on success and reset form.
-- [ ] **3.3 Filterable Roster Table & Action Buttons**
+- [x] **3.3 Filterable Roster Table & Action Buttons**
   - Create `components/RosterTable.tsx` (`'use client'`):
     - Search input (live filtering by name, email, or course).
     - Department filter select dropdown.
@@ -162,7 +162,7 @@ This blueprint breaks down the end-to-end development and deployment of the **Co
       - "Mark Renewed" button invoking `renewComplianceRecord(id)`.
       - Delete icon invoking `deleteComplianceRecord(id)`.
       - Header "Reset Demo Data" button and table empty state with a "Load Demo Records" trigger.
-- [ ] **3.4 Dashboard Page Integration (`app/page.tsx`)**
+- [x] **3.4 Dashboard Page Integration (`app/page.tsx`)**
   - Assemble components in `app/page.tsx`:
     - Mark file `export const dynamic = 'force-dynamic';`.
     - Fetch initial records via `getComplianceRecords()`.
