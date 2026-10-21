@@ -119,22 +119,22 @@ export default function IntakeModal({
       {/* Backdrop */}
       <div
         onClick={onClose}
-        className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs transition-opacity duration-200"
+        className="fixed inset-0 bg-slate-950/70 backdrop-blur-xs transition-opacity duration-200"
       />
 
       {/* Modal Card */}
-      <div className="relative w-full max-w-lg overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl transition-all duration-200 z-10">
+      <div className="relative w-full max-w-lg overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xl transition-all duration-200 z-10">
         {/* Modal Header */}
-        <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50/50 px-6 py-4">
+        <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/50 px-6 py-4">
           <div className="flex items-center gap-2.5">
-            <div className="rounded-lg bg-indigo-50 p-2 text-indigo-600 border border-indigo-100">
+            <div className="rounded-lg bg-indigo-50 dark:bg-indigo-950/60 p-2 text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-900/50">
               <PlusCircle className="h-5 w-5" />
             </div>
             <div>
-              <h2 id="intake-modal-title" className="text-base font-semibold text-slate-900">
+              <h2 id="intake-modal-title" className="text-base font-semibold text-slate-900 dark:text-white">
                 Log Training Completion
               </h2>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-slate-500 dark:text-slate-400">
                 Register a newly acquired certificate or employee training completion
               </p>
             </div>
@@ -142,7 +142,7 @@ export default function IntakeModal({
           <button
             type="button"
             onClick={onClose}
-            className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-colors"
+            className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
           >
             <X className="h-5 w-5" />
           </button>
@@ -151,14 +151,14 @@ export default function IntakeModal({
         {/* Modal Body Form */}
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           {error && (
-            <div className="rounded-lg bg-rose-50 border border-rose-200 p-3 text-xs font-medium text-rose-700">
+            <div className="rounded-lg bg-rose-50 dark:bg-rose-950/60 border border-rose-200 dark:border-rose-900/60 p-3 text-xs font-medium text-rose-700 dark:text-rose-300">
               {error}
             </div>
           )}
 
           {/* Full Name */}
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
               Employee Full Name
             </label>
             <div className="relative">
@@ -173,14 +173,14 @@ export default function IntakeModal({
                 placeholder="e.g. Ada Lovelace"
                 value={formData.employee_name}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-indigo-600 focus:outline-hidden focus:ring-1 focus:ring-indigo-600"
+                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 py-2 pl-9 pr-3 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-indigo-600 focus:outline-hidden focus:ring-1 focus:ring-indigo-600 bg-white dark:bg-slate-800"
               />
             </div>
           </div>
 
           {/* Work Email */}
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
               Corporate Email Address
             </label>
             <div className="relative">
@@ -194,7 +194,7 @@ export default function IntakeModal({
                 placeholder="ada@cyberdyne.io"
                 value={formData.employee_email}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-indigo-600 focus:outline-hidden focus:ring-1 focus:ring-indigo-600"
+                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 py-2 pl-9 pr-3 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-indigo-600 focus:outline-hidden focus:ring-1 focus:ring-indigo-600 bg-white dark:bg-slate-800"
               />
             </div>
           </div>
@@ -202,7 +202,7 @@ export default function IntakeModal({
           {/* Department & Course Title */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+              <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                 Department
               </label>
               <div className="relative">
@@ -213,10 +213,10 @@ export default function IntakeModal({
                   name="department"
                   value={formData.department}
                   onChange={handleChange}
-                  className="w-full appearance-none rounded-lg border border-slate-300 py-2 pl-9 pr-9 text-sm text-slate-900 focus:border-indigo-600 focus:outline-hidden focus:ring-1 focus:ring-indigo-600 bg-white cursor-pointer"
+                  className="w-full appearance-none rounded-lg border border-slate-300 dark:border-slate-700 py-2 pl-9 pr-9 text-sm text-slate-900 dark:text-slate-100 focus:border-indigo-600 focus:outline-hidden focus:ring-1 focus:ring-indigo-600 bg-white dark:bg-slate-800 cursor-pointer"
                 >
                   {DEPARTMENTS.map((dept) => (
-                    <option key={dept} value={dept}>
+                    <option key={dept} value={dept} className="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100">
                       {dept}
                     </option>
                   ))}
@@ -228,7 +228,7 @@ export default function IntakeModal({
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+              <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                 Course / Certification Title
               </label>
               <div className="relative">
@@ -242,7 +242,7 @@ export default function IntakeModal({
                   placeholder="e.g. SOC2 Security"
                   value={formData.course_name}
                   onChange={handleChange}
-                  className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-indigo-600 focus:outline-hidden focus:ring-1 focus:ring-indigo-600"
+                  className="w-full rounded-lg border border-slate-300 dark:border-slate-700 py-2 pl-9 pr-3 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-indigo-600 focus:outline-hidden focus:ring-1 focus:ring-indigo-600 bg-white dark:bg-slate-800"
                 />
               </div>
             </div>
@@ -251,7 +251,7 @@ export default function IntakeModal({
           {/* Dates */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+              <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                 Completion Date
               </label>
               <div className="relative">
@@ -264,13 +264,13 @@ export default function IntakeModal({
                   required
                   value={formData.completion_date}
                   onChange={handleChange}
-                  className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm text-slate-900 focus:border-indigo-600 focus:outline-hidden focus:ring-1 focus:ring-indigo-600 font-mono"
+                  className="w-full rounded-lg border border-slate-300 dark:border-slate-700 py-2 pl-9 pr-3 text-sm text-slate-900 dark:text-slate-100 focus:border-indigo-600 focus:outline-hidden focus:ring-1 focus:ring-indigo-600 font-mono bg-white dark:bg-slate-800"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+              <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                 Expiration Date
               </label>
               <div className="relative">
@@ -283,19 +283,19 @@ export default function IntakeModal({
                   required
                   value={formData.expiration_date}
                   onChange={handleChange}
-                  className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm text-slate-900 focus:border-indigo-600 focus:outline-hidden focus:ring-1 focus:ring-indigo-600 font-mono"
+                  className="w-full rounded-lg border border-slate-300 dark:border-slate-700 py-2 pl-9 pr-3 text-sm text-slate-900 dark:text-slate-100 focus:border-indigo-600 focus:outline-hidden focus:ring-1 focus:ring-indigo-600 font-mono bg-white dark:bg-slate-800"
                 />
               </div>
             </div>
           </div>
 
           {/* Modal Actions */}
-          <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-100">
+          <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-100 dark:border-slate-800">
             <button
               type="button"
               disabled={isPending}
               onClick={onClose}
-              className="rounded-lg border border-slate-200 px-4 py-2 text-xs font-medium text-slate-600 hover:bg-slate-50 transition-colors"
+              className="rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-2 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
             >
               Cancel
             </button>
