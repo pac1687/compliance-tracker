@@ -62,7 +62,7 @@ This blueprint breaks down the end-to-end development and deployment of the **Co
 **Goal:** Implement status computation, validation guards, and server actions for fetching, inserting, renewing, and deleting compliance records.
 
 ### Tasks
-- [ ] **2.1 TypeScript Domain Types & Date Utility**
+- [x] **2.1 TypeScript Domain Types & Date Utility**
   - Create `types/compliance.ts` with `ComplianceRecord`, `CreateRecordInput`, `ComplianceStatus`, and `MetricSummary`.
   - Create `lib/compliance-utils.ts` to implement:
     ```typescript
@@ -80,7 +80,7 @@ This blueprint breaks down the end-to-end development and deployment of the **Co
       return 'COMPLIANT';
     }
     ```
-- [ ] **2.2 Implement Server Actions (`app/actions.ts`)**
+- [x] **2.2 Implement Server Actions (`app/actions.ts`)**
   - Create `getComplianceRecords()` with status auto-computation so runtime dates stay accurate without cron jobs:
     ```typescript
     'use server';
@@ -124,7 +124,7 @@ This blueprint breaks down the end-to-end development and deployment of the **Co
     - Truncate or delete existing rows.
     - Re-insert default seed rows using `CURRENT_DATE +/- INTERVAL`.
     - Call `revalidatePath('/')`.
-- [ ] **2.3 Sanity Check Server Actions**
+- [x] **2.3 Sanity Check Server Actions**
   - Verify zero TypeScript compiler errors (`npx tsc --noEmit`).
 
 > ⚠️ **Pitfalls to Avoid:**
